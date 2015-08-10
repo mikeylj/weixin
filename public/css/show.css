@@ -1,0 +1,212 @@
+*{margin:0;outline:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+article,aside,footer,header,section,footer,nav,figure,menu{display:block}
+a{text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,.35)}
+html{height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+body{
+    background-color:#000;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    min-height:100%;
+    font-weight:300;
+    font-family:'Microsoft Yahei',Tahoma,Helvetica,Arial,sans-serif;
+    font-size:62.5%;
+    line-height:1.231;
+    -webkit-touch-callout:none;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-box-align:stretch;
+    position:relative
+}
+.nr{
+/*    width: 640px;
+    height: 1008px;*/
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-page {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-size: cover;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    z-index: 0;
+    display: none;
+    -webkit-transform-origin: center center;
+}
+.nr .edit_bg{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg_2.png);
+}
+.nr .edit_area {
+    text-align: left;
+    margin-left: 62px;
+}
+.img_bg{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+/*    -webkit-animation: scaleDown 7s ease 0s both;
+    -webkit-animation-play-state: initial;*/
+    background-image: url(../images/bg_2.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.img_bg1{
+   position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+/*    -webkit-animation: scaleDown 7s ease 0s both;
+    -webkit-animation-play-state: initial;*/
+    background-image: url(../images/bg.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.img_bg2{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+/*    -webkit-animation: scaleDown 7s ease 1s both;
+    -webkit-animation-play-state: initial;*/
+
+    background-image: url(../images/bg_3.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.editable-image{
+    position: relative;
+    text-align: center;
+}
+.ed-img{
+    -webkit-animation: xguide_down 4.0s infinite ease-in-out;
+    -moz-animation: xguide_down 4.0s infinite ease-in-out;
+    -o-animation: xguide_down 4.0s infinite ease-in-out;
+    animation: xguide_down 4.0s infinite ease-in-out;
+}
+.comp_image{
+    position: relative;
+    text-align: center;
+}
+.img-h{
+    height: 200px;
+}
+.img-e{
+    height: 100px;
+}
+.test_state{
+    -webkit-animation: flip 2s ease 0s 1 both;
+    -webkit-animation-play-state: initial;
+}
+.test_play{
+    -webkit-animation: wobble 2s ease 0s 1 both;
+    -webkit-animation-play-state: initial;
+}
+.success-roll{
+    -webkit-animation: rollIn 2s ease 0s 1 both;
+    -webkit-animation-play-state: initial;
+}
+.user-3d{
+    -webkit-animation: swing 2s ease 0s 1 both;
+    -webkit-animation-play-state: initial;
+}
+.team-3d{
+    -webkit-animation: zoomIn 2s ease 0s 1 both;
+    -webkit-animation-play-state: initial;
+}
+.chance-3d{
+    -webkit-animation: lightSpeedIn 2s ease 0s 1 both;
+    -webkit-animation-play-state: initial;
+}
+.vc-cost{
+    -webkit-transition: transform 0.4s linear;
+    transition: transform 0.4s linear;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    transform-origin: center bottom 0px;
+    -webkit-transform-origin: center bottom 0px;
+}
+#bg {
+    background-color: #000000;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    z-index: 900;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+}
+.potential {
+    display: none;
+    position: fixed;
+    padding: 1px;
+    left:50%;
+    top:50%;
+    z-index: 1000;
+    padding: 10px;
+    clear: both;
+}
+.potent-bg{
+    background-color: #f1a72b;
+    width: 300px;
+    height: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 7px solid #626161;
+}
+.potent-txt{
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 50px;
+}
+.potent-num{
+    font-size: 50px;
+    font-weight: bold;
+    color: #1A81E5;
+    text-align: center;
+    padding-top: 20px;
+}
+#pay_follow{
+    display: none;
+    position: fixed;
+    padding: 1px;
+    left:50%;
+    top:50%;
+    z-index: 1000;
+    padding: 10px;
+    clear: both;
+}
+.music {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 45px;
+    background: #fff;
+    box-shadow: 0 0 30px #f8fb04;
+}
+.music>img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 3px;
+    left: 7px;
+}
