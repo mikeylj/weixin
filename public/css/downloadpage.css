@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:"宋体";
+}
+.content{
+	width:100%;
+	height:auto;
+	margin:0 auto;
+	background:url(../images/downbg.png) repeat;
+}
+.down-h2{
+	color:#fbd1ab;
+	width:100%;
+	text-align:center;
+	margin-top:15px;
+	font-family:"微软雅黑";
+}
+.down-text{
+	width:100%;
+	line-height:25px;
+	font-size:15px;
+	color:#fff;
+	font-family:"宋体";
+}
+.down-phone{
+	text-align:center;
+	font-size:15px;
+	color:#fff;
+	font-family:"宋体";
+}
+.down-phone img{
+	width:20px;
+	height:20px;
+}
+.down-phone font{
+	color:#FEF43D;
+}
+.down-ac{
+	width:100%;
+	text-align:center;
+	margin-top:20px;
+}
+.down-ac img{
+	width:80%;
+	height:auto;
+}
+.down-person{
+	width:100%;
+	height:auto;
+	margin-top:10px;
+}
+.down-person img{
+	width:100%;
+	height:auto;
+}
+.have{
+	width:100%;
+	text-align:center;
+	color:#fff;
+	font-size:14px;
+	margin-top:10px;
+	font-family:"宋体";
+}
+.down-btn{
+	text-align:center;
+}
+.down-btn1{
+	width:100%;
+	height:auto;
+	text-align:center;
+	display:block;
+	cursor:pointer;
+	 transition:All 0.4s ease-in-out;
+    -webkit-transition:All 0.4s ease-in-out;
+    -moz-transition:All 0.4s ease-in-out;
+    -o-transition:All 0.4s ease-in-out;
+
+}
+.down-btn1 img{
+	width:100%;
+	height:auto;
+}
+.down-btn1:hover{
+	transform:scale(1.2);
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    -ms-transform:scale(1.2);
+}
+.wait-text{
+	color:#fff;
+	font-size:13px;
+	margin-top:10px;
+	padding-bottom:10px;
+}
+.wait-text .pa-text{
+	padding-right:5px;
+	padding-left:15px;
+	text-align:left;
+}
+.footer{
+	height:45px;
+	line-height:45px;
+	background:#FF3A39;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	font-size:15px;
+	color:#fff;
+}
