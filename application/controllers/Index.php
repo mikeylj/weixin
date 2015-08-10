@@ -126,7 +126,7 @@ class IndexController extends Yaf_Controller_Abstract {
         $appid  = $jsapi['wx_appid'];
         $jsapi_ticket   = $jsapi['jsapi_ticket'];
         $timestamp      = time();
-        $this_url            = $this->host_url . "/index/index";
+        $this_url            = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         $nonceStr       = "Wm3WZYTPz0wzccnW";
         $jsapi_sigure  = wechat_sdk::getInstance()->getJsapi_signature($jsapi_ticket, $timestamp, $this_url, $nonceStr);
 
