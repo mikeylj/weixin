@@ -1,3 +1,15 @@
+wx.config({
+debug: false,
+appId: '<?php echo $appid;?>',
+timestamp: <?php echo $timestamp;?>,
+nonceStr: '<?php echo $nonceStr;?>',
+signature: '<?php echo $jsapi_sigure;?>',
+jsApiList: [
+'onMenuShareAppMessage'
+]
+});
+
+<?php exit;?>
 <!DOCTYPE html>
 <html>
 <head>
