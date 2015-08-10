@@ -26,7 +26,7 @@
     <p class="down-ac"><img src="images/ac.png" /></p>
     <p class="down-phone">活动奖品：T袖　或　现金</p>
     <div class="down-person">
-        <img src="images/down-person.png" />
+        <img src="images/down-person.png" id="showimg"/>
     </div>
     <p class="have">已有5000师傅下载并且注册</p>
     <div class="row">
@@ -100,7 +100,8 @@
                 localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
                 for(var key in localIds)
                 {
-                       alert(key);
+                    document.getElementById('showimg').src = key;
+                    //alert(key);
                 }
             }
         });
