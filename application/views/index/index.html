@@ -19,6 +19,7 @@
 
 </head>
 <body>
+<!--
 <div class="nr">
     <section id="page1" name="page1" class="main-page" style="display: block;">
         <div class="img_bg">
@@ -31,6 +32,7 @@
                 <img src="/images/icon_19.png" />
             </div>
         </div>
+
 
     </section>
     <section id="page2" class="main-page">
@@ -159,12 +161,15 @@
     </section>
 
 </div>
+-->
 <div id="bg"> </div>
 <div class="potential">
     <img  id="fx" style="position: fixed; top: 0;" src="/images/shares.png" />
     <div class="potent-bg">
         <p class="potent-txt">您的创业潜力值为：</p>
         <p class="potent-num">456</p>
+        <a href="" onclick="uploadImg();return false;">上传图片</a>
+
     </div>
 </div>
 </body>
@@ -185,7 +190,7 @@
      * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
      */
     wx.config({
-        debug: true,
+        debug: false,
         appId: '<?php echo $appid;?>',
         timestamp: <?php echo $timestamp;?>,
         nonceStr: '<?php echo $nonceStr;?>',
@@ -209,7 +214,7 @@
      */
     wx.ready(function () {
         var shareData = {
-            title: '进入抽奖中心——家乐千万家，金戒找到你！中奖率高达67%喔！！',
+            title: '在这里——家乐千万家，金戒找到你！中奖率高达67%喔！！',
             desc: '输入兑奖码即可参加抽奖，不仅有67%的中奖率，还可已参加礼上礼和累计兑奖喔！大票子、金戒指、美背包，统统等你来拿！',
             link: '{$this_url}',
             imgUrl: '{_UFS_STATIC_HOST}mobile/img/unileverLucky/lopt.png'
@@ -217,7 +222,23 @@
         wx.onMenuShareAppMessage(shareData);
     });
     wx.error(function (res) {
-        alert(res.errMsg);
+        //alert(res.errMsg);
     });
+    function uploadImg(){
+        var localIds;
+        wx.chooseImage({
+            count: 1, // 默认9
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                for(var key in localIds)
+                {
+                       alert(key);
+                }
+            }
+        });
+    }
+
 </script>
 </html>
