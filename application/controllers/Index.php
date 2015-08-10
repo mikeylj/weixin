@@ -12,7 +12,7 @@ class IndexController extends Yaf_Controller_Abstract {
      * Yaf支持直接把Yaf_Request_Abstract::getParam()得到的同名参数作为Action的形参
      * 对于如下的例子, 当访问http://yourhost/y/index/index/index/name/yantze 的时候, 你就会发现不同
      */
-    private $host_url = "http://wx.behuo.com";
+    private $host_url = "http://test.wx.behuo.com";
     public function index1Action() {//默认Action
         $site = new OptionModel();
         $product = new ProductModel();
@@ -56,7 +56,7 @@ class IndexController extends Yaf_Controller_Abstract {
         $getAccessToken  = wechat_sdk::getInstance()->get_oauth_access_token($code);
         if(!empty($getAccessToken['errcode']))
         {
-            $url   = "http://yafmall.behuo.com/index/beforeauth";
+            $url   = $this->host_url . "/index/beforeauth";
             $this->redirect($url);
         }
         header("Content-Type: text/html; charset=utf-8");
@@ -108,17 +108,34 @@ class IndexController extends Yaf_Controller_Abstract {
             Yaf_Session::getInstance()->set("openid",$wxuser['openid']);
             Yaf_Session::getInstance()->set("nickname",$wxuser['nickname']);
         }
-        $url   = "http://yafmall.behuo.com/index/photo";
+        $url   = $this->host_url . "/index/index";
         $this->redirect($url);
 
 
     }
     public function indexAction()
     {
+
         if(!Yaf_Session::getInstance()->get("openid") || Yaf_Session::getInstance()->get("openid") == ""){
             $url = $this->host_url . "/index/beforeauth";
             $this->redirect($url);
         }
+        Yaf_Session::getInstance()->del("openid");
+        $jsapi = wechat_sdk::getInstance()->getjsapi();
+
+        $appid  = $jsapi['wx_appid'];
+        $jsapi_ticket   = $jsapi['jsapi_ticket'];
+        $timestamp      = time();
+        $this_url            = $this->host_url . "/index/index";
+        $nonceStr       = "Wm3WZYTPz0wzccnW";
+        $jsapi_sigure  = wechat_sdk::getInstance()->getJsapi_signature($jsapi_ticket, $timestamp, $this_url, $nonceStr);
+
+
+        $this->getView()->assign("appid", $appid);
+        $this->getView()->assign("nonceStr", $nonceStr);
+        $this->getView()->assign("timestamp",$timestamp);
+        $this->getView()->assign("jsapi_sigure",$jsapi_sigure);
+
         return true;
     }
 
